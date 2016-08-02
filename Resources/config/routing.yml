@@ -1,0 +1,3 @@
+ibtikar_share_economy_cms_api_user:
+    resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/api.yml"
+    prefix:   /api

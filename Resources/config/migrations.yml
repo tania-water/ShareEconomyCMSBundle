@@ -1,0 +1,4 @@
+name: Share economy content management system Migrations
+migrations_namespace: Ibtikar\ShareEconomyCMSBundle\Migrations
+table_name: migration_versions_cms
+migrations_directory: "src/Ibtikar/ShareEconomyCMSBundle/Migrations"

@@ -1,0 +1,4 @@
+ibtikar_share_economy_cms_api_page_get_page_data:
+    path:     /page-data/{slug}
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:API/Page:getPageData }
+    methods:  [GET]
