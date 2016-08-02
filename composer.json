@@ -1,0 +1,29 @@
+{
+    "name": "Ibtikar/ShareEconomyCMSBundle",
+    "type": "laravel-library",
+    "description": "Ibtikar share economy content management system",
+    "keywords": ["content management"],
+    "homepage": "https://github.com/Ibtikar/ShareEconomyCMSBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ibtikar"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "stof/doctrine-extensions-bundle": "^1.2",
+        "composer/installers": "~1.0",
+        "doctrine/doctrine-migrations-bundle": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ibtikar\\ShareEconomyCMSBundle\\": ""
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "src/{$name}": ["Ibtikar/ShareEconomyCMSBundle"]
+        }
+    }
+}
