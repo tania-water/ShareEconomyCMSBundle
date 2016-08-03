@@ -28,6 +28,16 @@ class Page
     /**
      * @Assert\Type(type="string")
      */
+    public $titleAr;
+
+    /**
+     * @Assert\Type(type="string")
+     */
     public $content;
+
+    /**
+     * @Assert\Type(type="string")
+     */
+    public $contentAr;
 
 }

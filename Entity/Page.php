@@ -33,6 +33,13 @@ class Page
     /**
      * @var string
      *
+     * @ORM\Column(name="titleAr", type="string", length=255, unique=true)
+     */
+    private $titleAr;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
     private $slug;
@@ -43,6 +50,13 @@ class Page
      * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contentAr", type="text", nullable=true)
+     */
+    private $contentAr;
 
     /**
      * @var \DateTime $created
@@ -103,6 +117,30 @@ class Page
     }
 
     /**
+     * Set titleAr
+     *
+     * @param string $titleAr
+     *
+     * @return Page
+     */
+    public function setTitleAr($titleAr)
+    {
+        $this->titleAr = $titleAr;
+
+        return $this;
+    }
+
+    /**
+     * Get titleAr
+     *
+     * @return string
+     */
+    public function getTitleAr()
+    {
+        return $this->titleAr;
+    }
+
+    /**
      * Set slug
      *
      * @param string $slug
@@ -148,6 +186,30 @@ class Page
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set contentAr
+     *
+     * @param string $contentAr
+     *
+     * @return Page
+     */
+    public function setContentAr($contentAr)
+    {
+        $this->contentAr = $contentAr;
+
+        return $this;
+    }
+
+    /**
+     * Get contentAr
+     *
+     * @return string
+     */
+    public function getContentAr()
+    {
+        return $this->contentAr;
     }
 
     /**
