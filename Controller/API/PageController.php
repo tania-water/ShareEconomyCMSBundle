@@ -23,13 +23,15 @@ class PageController extends Controller
      *          "description"="The page unique slug"
      *      }
      *  },
-     *  statusCodes = {
-     *      200 = "Returned on success",
-     *      404 = "If the page was not found"
+     *  statusCodes={
+     *      200="Returned on success",
+     *      403="Returned if the api key is not valid",
+     *      404="Returned if the page was not found"
      *  },
      *  responseMap = {
-     *      200 = "Ibtikar\ShareEconomyCMSBundle\APIResponse\Page",
-     *      404 = "Ibtikar\ShareEconomyToolsBundle\APIResponse\NotFound"
+     *      200="Ibtikar\ShareEconomyCMSBundle\APIResponse\Page",
+     *      403="Ibtikar\ShareEconomyToolsBundle\APIResponse\InvalidAPIKey",
+     *      404="Ibtikar\ShareEconomyToolsBundle\APIResponse\NotFound"
      *  }
      * )
      * @author Mahmoud Mostafa <mahmoud.mostafa@ibtikar.net.sa>
