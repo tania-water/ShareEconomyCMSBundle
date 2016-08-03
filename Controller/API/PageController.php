@@ -48,7 +48,7 @@ class PageController extends Controller
             $pageResponse->titleAr = $page->getTitleAr();
             $pageResponse->content = $page->getContent();
             $pageResponse->contentAr = $page->getContentAr();
-            return $APIOperations->getJsonResponseForObject($page);
+            return $APIOperations->getJsonResponseForObject($pageResponse);
         }
         return $APIOperations->getNotFoundErrorResponse();
     }
