@@ -5,7 +5,7 @@ namespace Ibtikar\ShareEconomyCMSBundle\Controller\API;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use Ibtikar\ShareEconomyCMSBundle\APIResponse\Page;
+use Ibtikar\ShareEconomyCMSBundle\APIResponse as CMSAPIResponse;
 
 class PageController extends Controller
 {
@@ -29,7 +29,7 @@ class PageController extends Controller
      *      404="Returned if the page was not found"
      *  },
      *  responseMap = {
-     *      200="Ibtikar\ShareEconomyCMSBundle\APIResponse\Page",
+     *      200="Ibtikar\ShareEconomyCMSBundle\APIResponse\SuccessPage",
      *      403="Ibtikar\ShareEconomyToolsBundle\APIResponse\InvalidAPIKey",
      *      404="Ibtikar\ShareEconomyToolsBundle\APIResponse\NotFound"
      *  }
@@ -43,16 +43,17 @@ class PageController extends Controller
         $APIOperations = $this->get('api_operations');
         $page = $this->getDoctrine()->getManager()->getRepository('IbtikarShareEconomyCMSBundle:Page')->findOneBySlug($slug);
         if ($page) {
-            $pageResponse = new Page();
+            $pageResponse = new CMSAPIResponse\Page();
             $pageResponse->id = $page->getId();
             $pageResponse->slug = $page->getSlug();
             $pageResponse->title = $page->getTitle();
             $pageResponse->titleAr = $page->getTitleAr();
             $pageResponse->content = $page->getContent();
             $pageResponse->contentAr = $page->getContentAr();
-            return $APIOperations->getJsonResponseForObject($pageResponse);
+            $successPageResponse = new CMSAPIResponse\SuccessPage();
+            $successPageResponse->page = $pageResponse;
+            return $APIOperations->getJsonResponseForObject($successPageResponse);
         }
         return $APIOperations->getNotFoundErrorJsonResponse();
     }
-
 }
