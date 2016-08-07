@@ -1,3 +1,8 @@
+ibtikar_share_economy_cms_view_page:
+    path:     /cms/view-page/{slug}
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:Page:viewPage }
+    methods:  [GET]
+    
 ibtikar_share_economy_cms_api_user:
     resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/api.yml"
     prefix:   /api

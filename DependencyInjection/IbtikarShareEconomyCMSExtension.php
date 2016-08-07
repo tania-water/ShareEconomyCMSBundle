@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class IbtikarCMSExtension extends Extension
+class IbtikarShareEconomyCMSExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -21,6 +21,10 @@ class IbtikarCMSExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+
+        foreach ($config as $key => $value) {
+            $container->setParameter('ibtikar_share_economy_cms.'.$key, $value);
+        }
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
