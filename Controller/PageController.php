@@ -20,7 +20,7 @@ class PageController extends Controller
         $page = $this->getDoctrine()->getManager()->getRepository('IbtikarShareEconomyCMSBundle:Page')->findOneBySlug($slug);
 
         if (!$page) {
-            return $this->createNotFoundException();
+            throw $this->createNotFoundException();
         }
 
         $layout = $this->getParameter('ibtikar_share_economy_cms.frontend_layout');
