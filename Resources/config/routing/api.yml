@@ -1,3 +1,7 @@
 ibtikar_share_economy_cms_api_page:
     resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/API/page.yml"
     prefix:   /
+
+ibtikar_share_economy_cms_api_contact:
+    resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/API/contact.yml"
+    prefix:   /

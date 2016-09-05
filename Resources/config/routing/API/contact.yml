@@ -1,0 +1,9 @@
+ibtikar_share_economy_cms_api_contact_us:
+    path:     /contact-us
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:API/Contact:contactUs }
+    methods:  [POST]
+    
+ibtikar_share_economy_cms_api_contact_types:
+    path:     /contact-types
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:API/Contact:contactTypes }
+    methods:  [GET]
