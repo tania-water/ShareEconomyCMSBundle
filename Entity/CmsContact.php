@@ -55,7 +55,7 @@ class CmsContact
      *
      * @ORM\ManyToOne(targetEntity="Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="type_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="type_id", referencedColumnName="id", onDelete="CASCADE", nullable=false)
      * })
      *
      * @Assert\NotBlank(message="fill_mandatory_field")
