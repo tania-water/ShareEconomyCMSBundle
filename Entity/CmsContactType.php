@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CmsContactType
 {
+
+    use \Ibtikar\ShareEconomyToolsBundle\Entity\TrackableTrait;
+
     /**
      * @var integer
      *
@@ -34,8 +37,6 @@ class CmsContactType
      * @ORM\Column(name="title_en", type="string", length=255, nullable=true)
      */
     private $titleEn;
-
-
 
     /**
      * Get id

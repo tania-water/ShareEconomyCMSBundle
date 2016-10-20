@@ -3,7 +3,6 @@
 namespace Ibtikar\ShareEconomyCMSBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -14,6 +13,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class CmsContact
 {
+
+    use \Ibtikar\ShareEconomyToolsBundle\Entity\TrackableTrait;
+
     /**
      * @var integer
      *
@@ -37,18 +39,10 @@ class CmsContact
      * @var string
      *
      * @ORM\Column(name="description", type="text", length=65535, nullable=true)
-     * 
+     *
      * @Assert\Length(max = 900)
      */
     private $description;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="created_at", type="datetime", nullable=true)
-     * @Gedmo\Timestampable(on="create")
-     */
-    private $createdAt;
 
     /**
      * @var \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType
@@ -118,30 +112,6 @@ class CmsContact
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt
-     *
-     * @return CmsContact
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
     }
 
     /**
