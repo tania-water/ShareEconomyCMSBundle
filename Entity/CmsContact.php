@@ -28,7 +28,7 @@ class CmsContact
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255, nullable=true)
+     * @ORM\Column(name="title", type="string", length=190, nullable=true)
      *
      * @Assert\NotBlank(message="fill_mandatory_field")
      * @Assert\Length(max = 140)

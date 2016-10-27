@@ -27,14 +27,14 @@ class CmsContactType
     /**
      * @var string
      *
-     * @ORM\Column(name="title_ar", type="string", length=255, nullable=true)
+     * @ORM\Column(name="title_ar", type="string", length=190, nullable=true)
      */
     private $titleAr;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title_en", type="string", length=255, nullable=true)
+     * @ORM\Column(name="title_en", type="string", length=190, nullable=true)
      */
     private $titleEn;
 

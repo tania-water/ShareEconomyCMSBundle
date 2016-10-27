@@ -27,21 +27,21 @@ class Page
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255, unique=true)
+     * @ORM\Column(name="title", type="string", length=190, unique=true)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titleAr", type="string", length=255, unique=true)
+     * @ORM\Column(name="titleAr", type="string", length=190, unique=true)
      */
     private $titleAr;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     * @ORM\Column(name="slug", type="string", length=190, unique=true)
      */
     private $slug;
 
