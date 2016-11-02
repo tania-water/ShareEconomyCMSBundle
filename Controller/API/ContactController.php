@@ -19,9 +19,11 @@ class ContactController extends Controller
      *  section="Contact",
      *  statusCodes={
      *      200="Returned on success",
+     *      500="Returned if there is an internal server error"
      *  },
      *  responseMap = {
      *      200="Ibtikar\ShareEconomyCMSBundle\APIResponse\ContactTypesResponse",
+     *      500="Ibtikar\ShareEconomyToolsBundle\APIResponse\InternalServerError"
      *  }
      * )
      * @author Karim Shendy <kareem.elshendy@ibtikar.net.sa>
@@ -59,11 +61,13 @@ class ContactController extends Controller
      *  },
      *  statusCodes = {
      *      200 = "Returned on success",
-     *      400 = "Validation failed."
+     *      400 = "Validation failed.",
+     *      500 = "Returned if there is an internal server error"
      *  },
      *  responseMap = {
      *      200 = "Ibtikar\ShareEconomyCMSBundle\APIResponse\MainResponse",
-     *      400 = "Ibtikar\ShareEconomyCMSBundle\APIResponse\ValidationErrorsResponse"
+     *      400 = "Ibtikar\ShareEconomyCMSBundle\APIResponse\ValidationErrorsResponse",
+     *      500 = "Ibtikar\ShareEconomyToolsBundle\APIResponse\InternalServerError"
      *  }
      * )
      *
