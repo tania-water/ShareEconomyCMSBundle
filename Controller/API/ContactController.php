@@ -109,6 +109,7 @@ class ContactController extends Controller
                 $em->flush();
                 $output = new CMSApiResponse\MainResponse();
             } catch (\Exception $exc) {
+                $this->get('logger')->critical($exc->getMessage());
                 $output          = new UMSApiResponse\MainResponse();
                 $output->status  = false;
                 $output->code    = 500;
