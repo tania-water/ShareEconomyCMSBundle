@@ -79,11 +79,11 @@ class ContactController extends Controller
     {
         $em      = $this->getDoctrine()->getManager();
         $contact = new CmsContact();
-        $contact->setTitle($request->get('title'));
-        $contact->setDescription($request->get('description'));
+        $contact->setTitle(trim($request->get('title')));
+        $contact->setDescription(trim($request->get('description')));
 
-        if (null !== $request->get('type')) {
-            $type = $em->getRepository('IbtikarShareEconomyCMSBundle:CmsContactType')->find($request->get('type'));
+        if (null !== trim($request->get('type'))) {
+            $type = $em->getRepository('IbtikarShareEconomyCMSBundle:CmsContactType')->find(trim($request->get('type')));
 
             if ($type) {
                 $contact->setType($type);
