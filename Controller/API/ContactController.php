@@ -82,12 +82,19 @@ class ContactController extends Controller
         $contact->setTitle(trim($request->get('title')));
         $contact->setDescription(trim($request->get('description')));
 
-        if (null !== trim($request->get('type'))) {
+        /* @var $translator \Symfony\Component\Translation\DataCollectorTranslator */
+        $translator = $this->get('translator');
+
+        if ("" !== trim($request->get('type'))) {
             $type = $em->getRepository('IbtikarShareEconomyCMSBundle:CmsContactType')->find(trim($request->get('type')));
 
-            if ($type) {
-                $contact->setType($type);
+            if (!$type) {
+                $errorMsg = $translator->trans('Type not exist.', array(), 'contactus');
+                $errorResponse = new CMSApiResponse\ValidationErrorsResponse();
+                $errorResponse->errors = array('type' => $errorMsg);
+                return new JsonResponse($errorResponse);
             }
+            $contact->setType($type);
         }
 
         $validationMessages = [];
