@@ -77,13 +77,27 @@ class ContactController extends Controller
      */
     public function contactUsAction(Request $request)
     {
-        $em      = $this->getDoctrine()->getManager();
-        $contact = new CmsContact();
-        $contact->setTitle(trim($request->get('title')));
-        $contact->setDescription(trim($request->get('description')));
+        $em = $this->getDoctrine()->getManager();
 
         /* @var $translator \Symfony\Component\Translation\DataCollectorTranslator */
         $translator = $this->get('translator');
+
+        $contact = new CmsContact();
+        $contact->setTitle(trim($request->get('title')));
+        $contact->setDescription(trim($request->get('description')));
+        $user = $this->getUser();
+        if ($user) {
+            $contact->setUser($user);
+        } else {
+            $validateUserExist = $this->getParameter('ibtikar_share_economy_cms.requireLoggedInUser', false);
+            if ($validateUserExist) {
+                $output = new CMSApiResponse\MainResponse();
+                $output->status = false;
+                $output->code = 401;
+                $output->message = $translator->trans('Invalid credentials');
+                return new JsonResponse($output);
+            }
+        }
 
         if ("" !== trim($request->get('type'))) {
             $type = $em->getRepository('IbtikarShareEconomyCMSBundle:CmsContactType')->find(trim($request->get('type')));
@@ -115,9 +129,10 @@ class ContactController extends Controller
             try {
                 $em->flush();
                 $output = new CMSApiResponse\MainResponse();
+                $output->message = $translator->trans('Success.');
             } catch (\Exception $exc) {
                 $this->get('logger')->critical($exc->getMessage());
-                $output          = new UMSApiResponse\MainResponse();
+                $output          = new CMSApiResponse\MainResponse();
                 $output->status  = false;
                 $output->code    = 500;
                 $output->message = $this->get('translator')->trans("something_went_wrong");

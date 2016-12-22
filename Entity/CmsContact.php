@@ -57,6 +57,12 @@ class CmsContact
     private $type;
 
     /**
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
+     * @ORM\ManyToOne(targetEntity="ContactUsUserInterface")
+     */
+    private $user;
+
+    /**
      * Get id
      *
      * @return integer
@@ -136,5 +142,29 @@ class CmsContact
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType $user
+     *
+     * @return CmsContact
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
