@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Migrations;
+namespace Ibtikar\ShareEconomyCMSBundle\Migrations;
 
 use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
