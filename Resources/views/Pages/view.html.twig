@@ -1,5 +1,7 @@
 {% extends layout %}
 
+{% block title %}{{ app.request.locale == 'en' ? page.title : page.titleAr }}{% endblock %}
+
 {% block content %}
     <h1>{{ app.request.locale == 'en' ? page.title : page.titleAr }}</h1>
     {{ app.request.locale == 'en' ? page.content : page.contentAr | raw }}

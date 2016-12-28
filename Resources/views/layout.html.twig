@@ -1,0 +1,21 @@
+{% set locale = app.request.locale ? app.request.locale : 'ar' %}
+{% spaceless %}
+<!doctype html>
+<html lang="{{ locale }}" dir="{{ locale == 'ar' ? 'rtl' : 'ltr' }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>{% block title %}{% trans %}Welcome to our site{% endtrans %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('bundles/ibtikarshareeconomycms/css/layout' ~ (locale == 'ar' ? '_ar' : '') ~ '.css') }}">
+        <link href='//fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="container About-container">
+            <div class="FAQ-questions">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
+{% endspaceless %}

@@ -25,7 +25,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('requireLoggedInUser')
                 ->end()
                 ->scalarNode('frontend_layout')
-                    ->defaultValue('IbtikarShareEconomyCMSBundle:layout.html.twig')
+                    ->defaultValue('IbtikarShareEconomyCMSBundle::layout.html.twig')
                 ->end()
             ->end();
 

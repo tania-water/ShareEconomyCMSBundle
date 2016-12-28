@@ -1,0 +1,66 @@
+
+/* CSS Document */
+body {
+    background-color:#fff;
+}
+header {
+	box-shadow: 1px 0 3px rgba(0,0,0,.15);
+	position:fixed;
+	width:100%;
+	background-color:#fff;
+	z-index:1;
+}
+/* Terms-of-use style*/
+/* privacy-policy*/
+/* About-Baredoo*/
+.Terms-of-use,
+.privacy-policy,
+.About-Baredoo,
+.FAQ-questions{
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 15px 0 35px 0;
+}
+.Terms-of-use>h3,
+.privacy-policy>h3,
+.About-Baredoo>h3,
+FAQ-questions>h3{
+    font-family: "Roboto",sans-serif;
+    color: #5F5D5D;
+    padding: 5px 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.Terms-of-use>h1 ,
+.privacy-policy>h1,
+.About-Baredoo>h1,
+.FAQ-questions>h1{
+    color: #EE6C19;
+    font-family: "Roboto",sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 20px 20px 0;
+}
+.Terms-of-use>p ,
+.privacy-policy>p,
+.About-Baredoo>p,
+.FAQ-questions>p{
+    padding:20px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #5F5D5D;
+    line-height: 1.5;
+    font-size: 14px;
+    padding-bottom: 0px;
+}
+.FAQ-questions>h1{
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+.FAQ-questions>p{
+    margin-top: 0;
+    padding-top: 10px;
+}
