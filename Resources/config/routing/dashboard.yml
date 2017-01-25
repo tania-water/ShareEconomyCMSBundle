@@ -1,0 +1,7 @@
+ibtikar_share_economy_cms_dashboard_pages:
+    resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/Dashboard/pages.yml"
+    prefix:   /pages
+
+ibtikar_share_economy_cms_dashboard_contact_us:
+    resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/Dashboard/contactUs.yml"
+    prefix:   /contact-us

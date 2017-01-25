@@ -1,0 +1,12 @@
+ibtikar_share_economy_cms_dashboard_pages_list:
+    path:     /
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:Backend/Pages:list }
+    methods:  [GET]
+
+ibtikar_share_economy_cms_dashboard_pages_details:
+    path:     /details/{id}
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:Backend/Pages:details }
+
+ibtikar_share_economy_cms_dashboard_pages_edit:
+    path:     /edit/{id}
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:Backend/Pages:editPage }

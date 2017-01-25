@@ -1,0 +1,11 @@
+ibtikar_share_economy_cms_dashboard_contact_us_list:
+    path:     /
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:Backend/ContactUs:list }
+
+ibtikar_share_economy_cms_dashboard_contact_us_delete:
+    path:     /delete/{id}
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:Backend/ContactUs:delete }
+    
+ibtikar_share_economy_cms_dashboard_contact_us_multiple_delete:
+    path:     /multiple-delete
+    defaults: { _controller: IbtikarShareEconomyCMSBundle:Backend/ContactUs:multipleDelete }

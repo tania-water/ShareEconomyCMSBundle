@@ -27,6 +27,12 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('frontend_layout')
                     ->defaultValue('IbtikarShareEconomyCMSBundle::layout.html.twig')
                 ->end()
+                ->scalarNode('dashboard_layout')
+                    ->defaultValue('IbtikarShareEconomyDashboardDesignBundle:Layout:dashboard.html.twig')
+                ->end()
+                ->scalarNode('dashboard_list_template')
+                    ->defaultValue('IbtikarShareEconomyDashboardDesignBundle:List:list.html.twig')
+                ->end()
             ->end();
 
         return $treeBuilder;

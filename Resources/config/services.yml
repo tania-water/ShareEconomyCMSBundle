@@ -1,1 +1,7 @@
 services:
+    shareEconomyCms.contact_us_type_filter:
+        class:  Ibtikar\ShareEconomyCMSBundle\Service\DashboardListFilters\ContactUsTypeFilter
+        arguments:  ["@doctrine.orm.entity_manager", "@request_stack"]
+
+    shareEconomyCms.contact_us_one_field_search:
+        class:  Ibtikar\ShareEconomyCMSBundle\Service\DashboardListOneFieldSearch\ContactUsSearch

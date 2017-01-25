@@ -15,7 +15,6 @@ class CmsContact
 {
 
     use \Ibtikar\ShareEconomyToolsBundle\Entity\TrackableTrait;
-
     /**
      * @var integer
      *
@@ -147,7 +146,7 @@ class CmsContact
     /**
      * Set user
      *
-     * @param \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType $user
+     * @param \Ibtikar\ShareEconomyUMSBundle\Entity\BaseUser $user
      *
      * @return CmsContact
      */
@@ -161,10 +160,20 @@ class CmsContact
     /**
      * Get user
      *
-     * @return \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType
+     * @return \Ibtikar\ShareEconomyUMSBundle\Entity\BaseUser
      */
     public function getUser()
     {
         return $this->user;
+    }
+
+    public function displayUserName()
+    {
+        return $this->getUser() ? $this->getUser()->getFullName() : "---";
+    }
+
+    public function getTypeName()
+    {
+        return $this->getType() ? $this->getType()->getTitleEn() : "---";
     }
 }

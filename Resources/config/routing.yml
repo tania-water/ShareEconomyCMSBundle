@@ -6,3 +6,7 @@ ibtikar_share_economy_cms_view_page:
 ibtikar_share_economy_cms_api_user:
     resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/api.yml"
     prefix:   /api
+
+ibtikar_share_economy_cms_dashboard:
+    resource: "@IbtikarShareEconomyCMSBundle/Resources/config/routing/dashboard.yml"
+    prefix:   /dashboard/share-economy-cms
