@@ -89,7 +89,7 @@ class ContactController extends Controller
         if ($user) {
             $contact->setUser($user);
         } else {
-            $validateUserExist = $this->getParameter('ibtikar_share_economy_cms.requireLoggedInUser', false);
+            $validateUserExist = $this->getParameter('ibtikar_share_economy_cms.requireLoggedInUser');
             if ($validateUserExist) {
                 $output = new CMSApiResponse\MainResponse();
                 $output->status = false;

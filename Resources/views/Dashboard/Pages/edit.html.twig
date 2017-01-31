@@ -23,7 +23,7 @@
                         <!-- Navigation -->
                         <div class="panel panel-flat">
                             <div class="panel-heading">
-                                <h1 class="panel-title">Edit CMS page details</h1>
+                                <h1 class="panel-title">{{'Edit CMS page details'|trans}}</h1>
                             </div>
                             <div class="panel-body">
                                 {% form_theme form 'IbtikarShareEconomyDashboardDesignBundle:Theme:dashboard.html.twig' %}
@@ -85,18 +85,19 @@
     <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/forms/styling/uniform.min.js') }}"></script>
     <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/forms/styling/switchery.min.js') }}"></script>
     <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/forms/styling/switch.min.js') }}"></script>
+    {% if applyTextEditor %}
+        <script>
+            $(document).ready(function () {
+                CKEDITOR.replace('page_contentAr', {
+                    height: '400px',
+                    extraPlugins: 'forms'
+                });
 
-    <script>
-        $(document).ready(function () {
-            CKEDITOR.replace('page_contentAr', {
-                height: '400px',
-                extraPlugins: 'forms'
+                CKEDITOR.replace('page_content', {
+                    height: '400px',
+                    extraPlugins: 'forms'
+                });
             });
-            
-            CKEDITOR.replace('page_content', {
-                height: '400px',
-                extraPlugins: 'forms'
-            });
-        });
-    </script>
+        </script>
+    {% endif %}
 {% endblock %}

@@ -11,6 +11,7 @@ class PagesController extends DashboardController
     protected $className    = 'Page';
     protected $entityBundle = 'IbtikarShareEconomyCMSBundle';
     protected $isSearchable = false;
+    protected $translationDomain = 'page';
     protected $listActions  = [
         'view' => 'ibtikar_share_economy_cms_dashboard_pages_details',
         'edit' => 'ibtikar_share_economy_cms_dashboard_pages_edit'
@@ -60,7 +61,8 @@ class PagesController extends DashboardController
 
         $em   = $this->getDoctrine()->getManager();
         $form = $this->createForm('Ibtikar\ShareEconomyCMSBundle\Form\PageType', $page, [
-            'method' => 'POST'
+            'method' => 'POST',
+            'translation_domain'=>$this->translationDomain
         ]);
 
         if ($request->isMethod('POST')) {
@@ -73,7 +75,6 @@ class PagesController extends DashboardController
                 return $this->redirectToRoute('ibtikar_share_economy_cms_dashboard_pages_list');
             }
         }
-
-        return $this->render('IbtikarShareEconomyCMSBundle:Dashboard/Pages:edit.html.twig', ['form' => $form->createView()]);
+        return $this->render('IbtikarShareEconomyCMSBundle:Dashboard/Pages:edit.html.twig', ['form' => $form->createView(), 'applyTextEditor' => $this->getParameter('ibtikar_share_economy_cms.applyTextEditor')]);
     }
 }
