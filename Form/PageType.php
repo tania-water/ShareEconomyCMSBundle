@@ -17,8 +17,8 @@ class PageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class, ['label' => 'Title'])
-            ->add('titleAr', TextType::class, ['label' => 'Title'])
+            ->add('title', TextType::class, ['label' => 'Title', 'attr'=>array('data-rule-maxlength'=>"200")])
+            ->add('titleAr', TextType::class, ['label' => 'Title', 'attr'=>array('data-rule-maxlength'=>"200")])
             ->add('content', TextareaType::class, ['label' => 'Description'])
             ->add('contentAr', TextareaType::class, ['label' => 'Description']);
     }
