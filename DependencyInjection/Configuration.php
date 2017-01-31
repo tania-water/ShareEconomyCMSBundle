@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('IbtikarShareEconomyCMSBundle:Pages:view.html.twig')
                 ->end()
                 ->scalarNode('applyTextEditor')
-                    ->defaultValue(false)
+                    ->defaultValue(true)
                 ->end()
                 ->scalarNode('dashboard_layout')
                     ->defaultValue('IbtikarShareEconomyDashboardDesignBundle:Layout:dashboard.html.twig')
