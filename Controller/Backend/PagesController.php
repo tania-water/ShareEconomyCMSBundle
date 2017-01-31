@@ -17,8 +17,7 @@ class PagesController extends DashboardController
         'edit' => 'ibtikar_share_economy_cms_dashboard_pages_edit'
     ];
     protected $listColumns  = [
-            ['title', ['name' => 'Title']],
-            ['createdAt', ['name' => 'Created at', 'type' => 'date']]
+            ['title', ['name' => 'Title', 'isSortable' => false]]
     ];
     protected $pageTitle    = 'CMS Pages List';
 
