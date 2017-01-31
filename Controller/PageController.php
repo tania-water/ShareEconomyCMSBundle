@@ -4,6 +4,7 @@ namespace Ibtikar\ShareEconomyCMSBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class PageController extends Controller
 {
@@ -15,7 +16,7 @@ class PageController extends Controller
      * @param string $slug
      * @return Response
      */
-    public function viewPageAction($slug)
+    public function viewPageAction(Request $request, $slug)
     {
         $page = $this->getDoctrine()->getManager()->getRepository('IbtikarShareEconomyCMSBundle:Page')->findOneBySlug($slug);
 
@@ -23,8 +24,8 @@ class PageController extends Controller
             throw $this->createNotFoundException();
         }
 
-        $layout = $this->getParameter('ibtikar_share_economy_cms.frontend_layout');
+        $template = $this->getParameter('ibtikar_share_economy_cms.frontend_template');
 
-        return $this->render('IbtikarShareEconomyCMSBundle:Pages:view.html.twig', ['page' => $page, 'layout' => $layout]);
+        return $this->render($template, ['page' => $page]);
     }
 }

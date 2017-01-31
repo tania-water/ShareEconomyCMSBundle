@@ -29,7 +29,7 @@ Installation steps
 6.Configure the bundle templates: add the following lines to your project config.yml
     
     ibtikar_share_economy_cms:
-        frontend_layout: "AppBundle:Frontend:layout.html.twig"
+        frontend_template: "AppBundle:Frontend:layout.html.twig"
         dashboard_layout: "AppBundle:Layout:dashboard.html.twig"
         dashboard_list_template: "AppBundle:List:list.html.twig"
         requireLoggedInUser: false
