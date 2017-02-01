@@ -17,9 +17,12 @@ class PagesController extends DashboardController
         'edit' => 'ibtikar_share_economy_cms_dashboard_pages_edit'
     ];
     protected $listColumns  = [
-            ['title', ['name' => 'Title', 'isSortable' => false]]
+            ['title', ['name' => 'Title En']],
+            ['titleAr', ['name' => 'Title Ar', 'isSortable' => false]]
     ];
     protected $pageTitle    = 'CMS Pages List';
+
+    protected $defaultSort = array('column' => 'title', 'sort' => 'asc');
 
     public function getListQuery()
     {
