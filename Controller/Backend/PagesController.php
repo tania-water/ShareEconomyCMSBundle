@@ -73,7 +73,7 @@ class PagesController extends DashboardController
             if ($form->isValid()) {
                 $em->flush();
 
-                $this->addFlash('success', 'Page has been updated successfully');
+                $this->addFlash('success', $this->get('translator')->trans('Done Successfully'));
                 return $this->redirectToRoute('ibtikar_share_economy_cms_dashboard_pages_list');
             }
         }
