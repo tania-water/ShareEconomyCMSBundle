@@ -28,7 +28,7 @@
                             <div class="panel-body">
                                 {% form_theme form 'IbtikarShareEconomyDashboardDesignBundle:Theme:dashboard.html.twig' %}
 
-                                {{ form_start(form, {'attr': {'novalidate':''} }) }}
+                                {{ form_start(form, {'attr': {'novalidate':'', 'class': (attr.class|default('form-horizontal dev-js-validation'))} }) }}
                                 <div class="tabbable">
                                     <ul class="nav nav-tabs nav-tabs-highlight">
                                         <li class="active">
@@ -85,6 +85,14 @@
     <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/forms/styling/uniform.min.js') }}"></script>
     <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/forms/styling/switchery.min.js') }}"></script>
     <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/forms/styling/switch.min.js') }}"></script>
+    <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/jquery.form.min.js')}}"></script>
+    <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/dev/validation.js')}}"></script>
+    {% if app.session.get('_locale') is defined and app.session.get('_locale') == 'en' %}
+        <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/jquery-validation/messages_en.js')}}"></script>
+    {% else %}
+        <script src="{{ asset('bundles/ibtikarshareeconomydashboarddesign/js/plugins/jquery-validation/messages_ar.js')}}"></script>
+    {% endif %}
     {% if applyTextEditor %}
         <script>
             $(document).ready(function () {

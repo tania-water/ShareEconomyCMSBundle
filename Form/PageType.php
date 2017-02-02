@@ -19,8 +19,8 @@ class PageType extends AbstractType
         $builder
             ->add('title', TextType::class, ['label' => 'Title', 'attr'=>array('data-rule-maxlength'=>"200")])
             ->add('titleAr', TextType::class, ['label' => 'Title', 'attr'=>array('data-rule-maxlength'=>"200")])
-            ->add('content', TextareaType::class, ['label' => 'Description'])
-            ->add('contentAr', TextareaType::class, ['label' => 'Description']);
+            ->add('content', TextareaType::class, ['label' => 'Description', 'required'=>false])
+            ->add('contentAr', TextareaType::class, ['label' => 'Description', 'required'=>false]);
     }
 
     /**
