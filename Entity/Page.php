@@ -27,14 +27,14 @@ class Page
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=190, unique=true)
+     * @ORM\Column(name="title", type="string", length=200)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titleAr", type="string", length=190, unique=true)
+     * @ORM\Column(name="titleAr", type="string", length=200)
      */
     private $titleAr;
 
