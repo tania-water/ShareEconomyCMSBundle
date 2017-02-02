@@ -18,7 +18,7 @@ class PagesController extends DashboardController
     ];
     protected $listColumns  = [
             ['title', ['name' => 'Title En']],
-            ['titleAr', ['name' => 'Title Ar', 'isSortable' => false]]
+            ['titleAr', ['name' => 'Title Ar']]
     ];
     protected $pageTitle    = 'CMS Pages List';
 
