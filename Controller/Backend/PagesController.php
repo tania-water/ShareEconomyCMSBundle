@@ -50,7 +50,7 @@ class PagesController extends DashboardController
             throw $this->createNotFoundException();
         }
 
-        return $this->render('IbtikarShareEconomyCMSBundle:Dashboard/Pages:details.html.twig', ['page' => $page]);
+        return $this->render('IbtikarShareEconomyCMSBundle:Dashboard/Pages:details.html.twig', ['page' => $page,'isEditor'=>$this->getParameter('ibtikar_share_economy_cms.applyTextEditor')]);
     }
 
     /**

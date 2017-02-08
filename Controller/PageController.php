@@ -26,6 +26,6 @@ class PageController extends Controller
 
         $template = $this->getParameter('ibtikar_share_economy_cms.frontend_template');
 
-        return $this->render($template, ['page' => $page]);
+        return $this->render($template, ['page' => $page,'isEditor'=>$this->getParameter('ibtikar_share_economy_cms.applyTextEditor')]);
     }
 }
