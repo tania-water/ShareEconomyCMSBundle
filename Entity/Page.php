@@ -3,6 +3,7 @@
 namespace Ibtikar\ShareEconomyCMSBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints AS Assert;
 
 /**
  * Page
@@ -28,6 +29,8 @@ class Page
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=200)
+     * @Assert\NotBlank
+     * @Assert\Length(max = 200)
      */
     private $title;
 
@@ -35,6 +38,8 @@ class Page
      * @var string
      *
      * @ORM\Column(name="titleAr", type="string", length=200)
+     * @Assert\NotBlank
+     * @Assert\Length(max = 200)
      */
     private $titleAr;
 
