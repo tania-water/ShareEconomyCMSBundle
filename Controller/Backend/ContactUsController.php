@@ -26,6 +26,8 @@ class ContactUsController extends DashboardController
     ];
     protected $pageTitle       = 'Contact Us List';
 
+    protected $translationDomain       = 'contactus';
+
     public function getListQuery()
     {
         $listTemplate = $this->getParameter('ibtikar_share_economy_cms.dashboard_list_template');

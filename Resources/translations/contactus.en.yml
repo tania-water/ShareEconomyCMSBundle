@@ -1,2 +1,9 @@
 'Type not exist':
     '': 'Value should be only a valid ID'   # FIXME
+'Title': 'Title'
+'Message': 'Message'
+'User': 'User'
+'Type': 'Type'
+'Created At': 'Created At'
+'Search in user names and emails': 'Search in user names and emails'
+'Contact Us List': Contact Us List

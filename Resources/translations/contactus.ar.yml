@@ -1,2 +1,9 @@
 'Type not exist':
     '': 'نوع الطلب غير موجود'   # FIXME
+'Title': 'العنوان'
+'Message': 'الرسالة'
+'User': 'المستخدم'
+'Type': 'النوع'
+'Created At': 'تاريخ الإنشاء'
+'Search in user names and emails': 'البحث بالإسم أو بالبريد الإلكتروني'
+'Contact Us List': 'قائمة اتصل بنا'
