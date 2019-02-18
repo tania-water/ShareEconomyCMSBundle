@@ -3,6 +3,7 @@
 namespace Ibtikar\ShareEconomyCMSBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -13,8 +14,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class CmsContact
 {
-
     use \Ibtikar\ShareEconomyToolsBundle\Entity\TrackableTrait;
+
     /**
      * @var integer
      *
@@ -44,7 +45,7 @@ class CmsContact
     private $description;
 
     /**
-     * @var \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType
+     * @var CmsContactType
      *
      * @ORM\ManyToOne(targetEntity="Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType")
      * @ORM\JoinColumns({
@@ -56,8 +57,8 @@ class CmsContact
     private $type;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Ibtikar\TaniaModelBundle\Entity\User")
      * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
-     * @ORM\ManyToOne(targetEntity="ContactUsUserInterface")
      */
     private $user;
 
@@ -122,11 +123,11 @@ class CmsContact
     /**
      * Set type
      *
-     * @param \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType $type
+     * @param CmsContactType $type
      *
      * @return CmsContact
      */
-    public function setType(\Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType $type = null)
+    public function setType(CmsContactType $type = null)
     {
         $this->type = $type;
 
@@ -136,7 +137,7 @@ class CmsContact
     /**
      * Get type
      *
-     * @return \Ibtikar\ShareEconomyCMSBundle\Entity\CmsContactType
+     * @return CmsContactType
      */
     public function getType()
     {
